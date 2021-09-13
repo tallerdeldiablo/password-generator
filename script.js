@@ -4,45 +4,78 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
 
-
-
 function writePassword() {
 
-
 /*   PROmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmMSS */
-var capital ;
+var ifupper ;
+var iflower;
 var caracter ;
-var longe = prompt("How Long betweeb 8 and 128");
+var ifnumbers;
+var combinations = 0 ;
+
+
+var longe = prompt("How Long between 8 and 128");
 // If is not a number or between 8-128
 if (longe <9 || longe >128 ||  isNaN(longe))  {
-  alert("ERROR 8128 number is not correct 8128");
-
+  alert("ERROR number is not between 8 and 128");
+  return
 }
 /* if is a good number ---->>  */
  else  {
-     capital = confirm("Capital or NOn");
+     ifupper = confirm("Do you want to use Uppercase?");
 
-       if (capital == true) {
-        capital=true;                        //true value capital
-        console.log("yes  Capital"+capital);
+       if (ifupper == true) {
+          ifupper=true;                        //true value upper
+            combinations++;
+        console.log("yes  upper"+ifupper+combinations);
       }     
       else{
-        capital = false;
-      console.log("NO capital"+capital);
+        ifupper = false;
+      console.log("NO upper"+ifupper+combinations);
       
      }
-     caracter = confirm("Caracter or Non");
+     iflower = confirm("Do you want to use Lowercase?");
       
-     if (caracter == true) {
-       caracter=true;                       //true value caracter
-     
-      console.log("Yes caracter"+caracter);
+     if (iflower == true) {
+          iflower=true;                       //true value caracter
+             combinations++;
+      console.log("Yes caracter"+iflower+combinations);
      }
         else{
-        caracter = false;
-        console.log("NO caracter"+caracter);
+          iflower = false;
+        console.log("NO iflower"+iflower+combinations);
      }
+     ifnumbers = confirm("Do you want to use Numbers?");
+     if (ifnumbers == true) {
+      ifnumbers=true;                       //true value caracter
+        combinations++;
+     console.log("Yes ifnumbers"+ifnumbers+combinations);
+    }
+       else{
+        ifnumbers = false;
+       console.log("NO ifnumbers"+ifnumbers+combinations);
+    }
+    caracter = confirm("Do you want to use Special Caracters?");
+    if (caracter == true) {
+      caracter=true;                       //true value caracter
+        combinations++;
+     console.log("Yes caracter"+caracter+combinations);
+    }
+       else{
+       caracter = false;
+       console.log("NO caracter"+caracter+combinations);
+    }
  }
+ /*ERROR*/ 
+if (combinations == 0 ){
+  alert("Φ╙ERROR NO COMBINATIONS SELECTED╘╒");
+  return
+}
+
+
+
+
+
  /*end prommmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/ 
 
   var password = generatePassword();
@@ -54,17 +87,6 @@ if (longe <9 || longe >128 ||  isNaN(longe))  {
 
 
 
-
-
-  
-/*
-butt load of code
-
-*/
-
-/* test
-console.log("dos"+caracter+capital);
-*/
 
   }
 

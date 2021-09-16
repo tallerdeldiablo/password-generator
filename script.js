@@ -3,12 +3,12 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 
-
+var array = [];
 function writePassword() {
   const upperA = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
   const lowerA = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   const numberA = [1,2,3,4,5,6,7,8,9];
-  const specialA = [40,41,42,43,44,45,46,47,48];
+  const specialA = [33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,91,92,93,94,95,96,123,124,125,126];// 33!"#$%&'()*+,-./47 -- :;<=>?@ 91[\]^_`96 123{|}~126
 
   /*   PROmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmMSS */
 var ifupper ;
@@ -16,7 +16,7 @@ var iflower;
 var ifcaracter ;
 var ifnumbers;
 var combinations = 0 ;
-var array = ["","","","","","","",""];
+
 
 
 var longe = prompt("How Long between 8 and 128");
@@ -29,13 +29,10 @@ if (longe <8 || longe >128 ||  isNaN(longe))  {
  else  {
      ifupper = confirm("Do you want to use Uppercase?");
 
-       if (ifupper == true) {
-          ifupper=true;                        //true value upper
+       if (ifupper == true) {              //true condition in the prompt        
+        ifupper= true;         
             combinations++;
-
-            var index = Math.floor(Math.random() * lowerA.length);
-            array [0] = upperA [index];
-            array [1] = upperA [index];
+      
 
             console.log("array"+ array);
 
@@ -48,14 +45,10 @@ if (longe <8 || longe >128 ||  isNaN(longe))  {
      }
      iflower = confirm("Do you want to use Lowercase?");
       
-     if (iflower == true) {
-          iflower=true;                       //true value caracter
-             combinations++;
+     if (iflower == true) {        //true condition in the prompt
+             combinations++; 
 
-          //   array [2] = lowerA [index];
-           // array [3] = lowerA [index];
-
-      console.log("Yes caracter"+iflower+combinations);
+       console.log("Yes caracter"+iflower+combinations);
      }
         else{
           iflower = false;
@@ -63,24 +56,23 @@ if (longe <8 || longe >128 ||  isNaN(longe))  {
         console.log("NO iflower"+iflower+combinations);
      }
      ifnumbers = confirm("Do you want to use Numbers?");
-     if (ifnumbers == true) {
-      ifnumbers=true;                       //true value caracter
-        combinations++;
+     if (ifnumbers == true) {                     //true condition in the prompt
+      combinations++;                 
          
 
      console.log("Yes ifnumbers"+ifnumbers+combinations);
     }
        else{
         ifnumbers = false;
-        numberA [0];          //empty array
+
        console.log("NO ifnumbers"+ifnumbers+combinations);
     }
     ifcaracter = confirm("Do you want to use Special Characters?");
-    if (ifcaracter == true) {
-      ifcaracter=true;                          //true value caracter
-        combinations++;  
+    if (ifcaracter == true) {              //true condition in the prompt
+      combinations++;                     
 
      console.log("Yes caracter"+ifcaracter+combinations);
+   
     }
        else{
        ifcaracter = false;
@@ -92,31 +84,41 @@ if (combinations == 0 ){
   alert("Φ╙ERROR NO COMBINATIONS SELECTED╘╒");
   return
 }
+console.log(combinations);
 
 // Filling the password with every true condition
 
 for (let i = 0; i < longe; i++) {
-  
-  if (ifupper){
-  array[i]= upperA[Math.floor(Math.random() * 25)];
-  i++;
+   
+  if (ifupper==true){
+    array [i] =upperA[Math.floor(Math.random() * 25)];           //chose a random index to put
+ i++;
     }
-     if (iflower==true){
-      array[i]= lowerA[Math.floor(Math.random() * 25)];
-      i++;
+    if (iflower==true){
+    array [i] = lowerA[Math.floor(Math.random() * 25)];
+    i++;
       }
-       if (iflower==true)
+      if(ifnumbers==true)
        {
-      array[i]= numberA[Math.floor(Math.random() * 10)];
-      i++;
+        array [i] =numberA[Math.floor(Math.random() * 9)];
+        i++;
         }
-         if (ifcaracter){
-         array[i]= numberA[Math.floor(Math.random() * 10)];
-         i++;
+      if(ifcaracter==true){
+              
+         let transformado = specialA[Math.floor(Math.random() * 25)];
+         console.log(transformado);
+         let text = String.fromCharCode(transformado);   //converts numbers to special characters
+         array.push(text);
+          console.log(array[i]);
+      
         }
-
+    
+      
+    
+    
 }
 console.log("PAssword"+array);
+
 
 generatePassword(array);
 
@@ -131,13 +133,12 @@ generatePassword(array);
  function  generatePassword(){
 
 
-return array.join('');
+ return array.join('');
 
 
 
   
   }
-
 
 }
 

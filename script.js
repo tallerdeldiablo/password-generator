@@ -91,17 +91,17 @@ console.log(combinations);
 for (let i = 0; i < longe; i++) {
    
   if (ifupper==true){
-    array [i] =upperA[Math.floor(Math.random() * 25)];           //chose a random index to put
- i++;
+    array.push(upperA[Math.floor(Math.random() * 25)]);           //chose a random index to put
+
     }
     if (iflower==true){
-    array [i] = lowerA[Math.floor(Math.random() * 25)];
-    i++;
+      array.push(lowerA[Math.floor(Math.random() * 25)]);
+ 
       }
       if(ifnumbers==true)
        {
-        array [i] =numberA[Math.floor(Math.random() * 9)];
-        i++;
+        array.push(numberA[Math.floor(Math.random() * 9)]);
+      
         }
       if(ifcaracter==true){
               
@@ -112,8 +112,7 @@ for (let i = 0; i < longe; i++) {
           console.log(array[i]);
       
         }
-    
-      
+         
     
     
 }
@@ -124,20 +123,15 @@ generatePassword(array);
 
  /*end prommmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/ 
 
-
-
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
  function  generatePassword(){
 
+return array.slice(0,longe).join('');
+ //return array.join('');
 
- return array.join('');
-
-
-
-  
   }
 
 }

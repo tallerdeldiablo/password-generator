@@ -95,19 +95,19 @@ for (let i = 0; i < longe; i++) {
 
     }
     if (iflower==true){
-      array.push(lowerA[Math.floor(Math.random() * 25)]);
+      array.push(lowerA[Math.floor(Math.random() * 25)]);    // push array
  
       }
       if(ifnumbers==true)
        {
-        array.push(numberA[Math.floor(Math.random() * 9)]);
+        array.push(numberA[Math.floor(Math.random() * 9)]);   // push
       
         }
       if(ifcaracter==true){
               
-         let transformado = specialA[Math.floor(Math.random() * 25)];
+         let transformado = specialA[Math.floor(Math.random() * 24)];
          console.log(transformado);
-         let text = String.fromCharCode(transformado);   //converts numbers to special characters
+         let text = String.fromCharCode(transformado);   //converts numbers to special characters   //brings a number from the array/converts to special character 
          array.push(text);
           console.log(array[i]);
       

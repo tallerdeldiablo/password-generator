@@ -12,5 +12,6 @@ My motivation for this project was to learn to use javascript better using funct
 ##
 I decided to work on this project because it was a challenge to be able to code the algorithm so that it works correctly without errors, I learned to use better function methods and this helped me
 
+![p_generator](https://user-images.githubusercontent.com/57916204/133682225-4d9eb4df-c468-4449-bd4f-2cfac871359d.jpg)
 
 The following link is for the live URL: https://tallerdeldiablo.github.io/password-generator/

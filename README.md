@@ -2,8 +2,8 @@
 
 
 ##
-My motivation for this project was to learn to use javascript better using functions, methods, etc, in order to master the tool. The problem consists in generating a password, with conditions that the user must choose between the following options:
-##
+My motivation for this project was to learn to use javascript better using functions, methods, etc, in order to master the tool. The problem consists of generating a password with conditions that the user must choose from the following options:
+
 #Capital letters
 #Lowercase letters
 #Numbers
